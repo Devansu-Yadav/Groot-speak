@@ -1,6 +1,6 @@
 var input_btn = document.getElementById("input-text");
-var translate_btn = document.querySelector("#translate");
-var output_text = document.querySelector(".output #output-text");
+var translate_btn = document.querySelector(".translate-groot #translate");
+var output_text = document.querySelector(".translate-groot .output");
 
 var serverURL = "https://api.funtranslations.com/translate/groot.json";
 
@@ -16,7 +16,7 @@ function errorHandler(error) {
 function clickEventHandler() {
     fetch(getURL())
     .then(response => response.json())
-    .then(data => output_text.innerText = "Translated text: " + data.contents.translated)
+    .then(data => output_text.innerText = data.contents.translated)
     .catch(errorHandler);
 };
 
